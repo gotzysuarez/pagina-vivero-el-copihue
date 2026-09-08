@@ -1,0 +1,6 @@
+{
+  "name": "Arkkhe — Find your inner green",
+  "description": "Estufas de biomasa hechas a mano en Girona. Doble combustión, titanio y bosque devuelto: menos humo, más calor por gramo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
