@@ -426,3 +426,4 @@ export function Hero() {
     </>
   );
 }
+

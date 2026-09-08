@@ -110,3 +110,4 @@ export function MediaLightbox({ open, onClose }: MediaLightboxProps) {
     document.body
   );
 }
+

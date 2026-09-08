@@ -34,3 +34,4 @@ export function Parallax({ children, distance = 60, className = "" }: ParallaxPr
     </div>
   );
 }
+

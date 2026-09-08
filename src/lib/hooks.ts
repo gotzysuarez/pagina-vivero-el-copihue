@@ -125,3 +125,4 @@ export function useScrollSpy(ids: string[] = SPY_IDS, offset = 120) {
 
   return { activeId, activeGroup };
 }
+

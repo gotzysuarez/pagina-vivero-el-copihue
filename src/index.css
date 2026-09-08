@@ -1,76 +1,9 @@
 @import "tailwindcss";
-
-@theme {
-  --color-bark: #454640;
-  --color-bark-deep: #33342f;
-  --color-bark-ink: #474842;
-  --color-sage: #b2b3a7;
-  --color-linen: #d7d8d6;
-
-  --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-lexend-exa), var(--font-lexend), ui-sans-serif, sans-serif;
-}
-
-@layer base {
-  :root {
-    --font-lexend: 'Lexend', ui-sans-serif, system-ui, sans-serif;
-    --font-lexend-exa: 'Lexend Exa', 'Lexend', ui-sans-serif, sans-serif;
-    --u: 1px;
-    color-scheme: dark;
-  }
-
-  @media (min-width: 1024px) {
-    :root {
-      --u: min(0.0694444vw, 0.1234568svh);
-    }
-  }
-
-  * { border-color: rgb(255 255 255 / 0.1); }
-
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 96px;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  body {
-    background-color: var(--color-bark);
-    color: #ffffff;
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  ::selection { background: #ffffff; color: var(--color-bark); }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-    }
-  }
-}
-
-@utility display-tight {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.12em;
-  line-height: 1.24;
-}
-
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #3a3b36; }
-::-webkit-scrollbar-thumb { background: #5c5d55; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #74756b; }
-
-.grain::after {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-}
+@theme{--font-sans:var(--font-body),ui-sans-serif,system-ui,sans-serif;--font-display:var(--font-heading),ui-serif,Georgia,serif}
+@layer base{:root{--font-body:"Manrope",ui-sans-serif,system-ui,sans-serif;--font-heading:"Cormorant Garamond",Georgia,serif;color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:78px}body{margin:0;overflow-x:hidden;background:#101510;color:#fff;font-family:var(--font-body);-webkit-font-smoothing:antialiased}button,a,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}::selection{background:#cf332d;color:#fff}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}}
+@utility section-title{font-family:var(--font-heading);font-size:clamp(3.2rem,7vw,7.2rem);font-weight:500;letter-spacing:-.075em;line-height:.88}
+@utility eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:#d2b66e}
+.grain::after{content:"";position:absolute;inset:-50%;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}::-webkit-scrollbar{width:9px}::-webkit-scrollbar-track{background:#080a08}::-webkit-scrollbar-thumb{background:#40503e;border-radius:999px}
+#catalogo article{border:1px solid rgb(210 182 110/.4);box-shadow:0 0 0 1px rgb(210 182 110/.04),0 18px 45px rgb(0 0 0/.12);transition:transform .55s cubic-bezier(.22,1,.36,1),border-color .4s ease,box-shadow .55s ease}
+#catalogo article:hover{transform:translateY(-8px);border-color:rgb(229 202 125/.72);box-shadow:0 24px 65px rgb(0 0 0/.3),0 0 28px rgb(210 182 110/.09)}
+#catalogo article>button>div:first-child{border-bottom:1px solid rgb(210 182 110/.38)}
