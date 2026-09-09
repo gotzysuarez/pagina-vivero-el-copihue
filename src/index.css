@@ -7,3 +7,24 @@
 #catalogo article{border:1px solid rgb(210 182 110/.4);box-shadow:0 0 0 1px rgb(210 182 110/.04),0 18px 45px rgb(0 0 0/.12);transition:transform .55s cubic-bezier(.22,1,.36,1),border-color .4s ease,box-shadow .55s ease}
 #catalogo article:hover{transform:translateY(-8px);border-color:rgb(229 202 125/.72);box-shadow:0 24px 65px rgb(0 0 0/.3),0 0 28px rgb(210 182 110/.09)}
 #catalogo article>button>div:first-child{border-bottom:1px solid rgb(210 182 110/.38)}
+
+/* Brillo dorado para los controles con forma de botón. Se limita a dispositivos
+   con mouse para evitar que el estado hover quede fijo al tocar en móvil. */
+button[class*="rounded"],a[class*="rounded-full"]{transition-property:color,background-color,border-color,box-shadow,transform!important;transition-duration:.35s!important;transition-timing-function:cubic-bezier(.22,1,.36,1)!important}
+@media(hover:hover) and (pointer:fine){
+  button[class*="rounded"]:hover,a[class*="rounded-full"]:hover{
+    color:#17150d!important;
+    border-color:#f7df8a!important;
+    background:linear-gradient(135deg,#fff0ad 0%,#e5bd55 48%,#b98523 100%)!important;
+    box-shadow:0 0 0 1px rgb(255 240 173/.42),0 0 20px rgb(229 189 85/.48),0 10px 30px rgb(0 0 0/.3)!important;
+  }
+}
+button[class*="rounded"]:focus-visible,a[class*="rounded-full"]:focus-visible{outline:2px solid #f7df8a;outline-offset:3px}
+header nav a{transition:color .3s ease,text-shadow .3s ease!important}
+@media(hover:hover) and (pointer:fine){
+  header nav a:hover{
+    color:#ffe98f!important;
+    text-shadow:0 0 7px rgb(255 233 143/.85),0 0 18px rgb(229 189 85/.52);
+  }
+}
+header nav a:focus-visible{color:#ffe98f!important;outline:2px solid #f7df8a;outline-offset:5px;text-shadow:0 0 12px rgb(229 189 85/.6)}

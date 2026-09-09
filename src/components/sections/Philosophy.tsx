@@ -123,4 +123,3 @@ export function Philosophy() {
     </Section>
   );
 }
-

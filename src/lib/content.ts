@@ -212,4 +212,3 @@ export const READOUTS = [
   { label: "Titanium Forest", value: 282, suffix: " G" },
   { label: "Phytotherapy", value: 43, suffix: "%" },
 ];
-

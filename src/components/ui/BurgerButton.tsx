@@ -41,4 +41,3 @@ export function BurgerButton({ open, onClick, className = "", style }: BurgerBut
     </button>
   );
 }
-

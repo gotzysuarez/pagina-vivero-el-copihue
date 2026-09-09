@@ -88,4 +88,3 @@ export function Fade({ children, delay = 0, className = "", y = 28 }: FadeProps)
     </motion.div>
   );
 }
-

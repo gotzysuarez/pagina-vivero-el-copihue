@@ -176,4 +176,3 @@ export function Check({ className, ...props }: IconProps) {
     </svg>
   );
 }
-

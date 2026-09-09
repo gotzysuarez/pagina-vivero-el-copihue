@@ -29,4 +29,3 @@ export const BRAND_FILM = {
 };
 
 export const FAVICON = asset("/favicon.svg");
-

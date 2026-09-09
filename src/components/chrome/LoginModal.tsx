@@ -227,4 +227,3 @@ export function LoginModal({ open, onClose }: LoginModalProps) {
     </Modal>
   );
 }
-

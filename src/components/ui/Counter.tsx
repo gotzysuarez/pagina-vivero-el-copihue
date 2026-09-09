@@ -42,4 +42,3 @@ export function Counter({
     </span>
   );
 }
-

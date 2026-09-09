@@ -109,4 +109,3 @@ export function Journal() {
     </Section>
   );
 }
-
