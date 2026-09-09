@@ -46,8 +46,8 @@ La página no procesa pagos en línea. Los precios actuales son referenciales y 
 ## 4. Datos actuales del vivero
 
 - Nombre: Vivero El Copihue
-- WhatsApp visible: `+56 9 8371 6033`
-- Número usado por el enlace: `56983716033`
+- WhatsApp visible: `+56 9 7735 9005`
+- Número usado por el enlace: `56977359005`
 - Ubicación: `https://maps.app.goo.gl/wjieYd9z7JWRjZmg8`
 - Dirección mostrada: `Unnamed Road, Melipilla, Región Metropolitana`
 - Horario mostrado: `Lun–sáb · 08:00–12:00 / 14:00–17:30`
