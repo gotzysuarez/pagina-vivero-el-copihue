@@ -6,6 +6,11 @@ import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {window.location.pathname.startsWith("/admin") ? <AdminApp /> : <App />}
+    {window.location.pathname.startsWith("/admin") ||
+    new URLSearchParams(window.location.search).has("admin") ? (
+      <AdminApp />
+    ) : (
+      <App />
+    )}
   </StrictMode>,
 );

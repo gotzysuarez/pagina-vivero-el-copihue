@@ -946,6 +946,12 @@ function Footer({ settings }: { settings: SiteSettings }) {
           <p className="mt-4 text-xs text-white/35">
             Página creada por kprile@oulook.es
           </p>
+          <a
+            className="mt-4 inline-flex rounded-full border border-[#d2b66e]/50 px-4 py-2 text-xs font-semibold text-[#d2b66e] transition hover:bg-[#d2b66e] hover:text-[#101510]"
+            href="/?admin"
+          >
+            Administrar sitio
+          </a>
         </div>
       </div>
     </footer>
