@@ -1,0 +1,10 @@
+<?php
+declare(strict_types=1);
+header('Content-Type: application/json; charset=utf-8');
+header('X-Content-Type-Options: nosniff'); header('X-Frame-Options: DENY'); header('Referrer-Policy: same-origin');
+$secure=!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off'; session_name('copihue_admin'); session_set_cookie_params(['lifetime'=>0,'path'=>'/','secure'=>$secure,'httponly'=>true,'samesite'=>'Strict']); session_start();
+function respond(array $data,int $status=200):never{http_response_code($status);echo json_encode($data,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);exit;}
+function body():array{$v=json_decode(file_get_contents('php://input')?:'{}',true);return is_array($v)?$v:[];}
+function config():array{$path=dirname(__DIR__,2).'/vivero-config.php';if(!is_file($path))respond(['error'=>'La configuración privada del panel aún no está instalada.'],503);$cfg=require $path;if(!is_array($cfg))respond(['error'=>'Configuración privada inválida.'],503);return $cfg;}
+function db():PDO{static $pdo=null;if($pdo instanceof PDO)return $pdo;$c=config();try{$pdo=new PDO("mysql:host={$c['db_host']};dbname={$c['db_name']};charset=utf8mb4",$c['db_user'],$c['db_pass'],[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,PDO::ATTR_EMULATE_PREPARES=>false]);return $pdo;}catch(Throwable $e){error_log('Copihue DB: '.$e->getMessage());respond(['error'=>'No se pudo conectar con la base de datos.'],503);}}
+function authenticated():bool{return isset($_SESSION['admin_id'],$_SESSION['admin_email']);} function require_auth():void{if(!authenticated())respond(['error'=>'La sesión venció. Ingresa nuevamente.'],401);} function require_csrf():void{$sent=$_SERVER['HTTP_X_CSRF_TOKEN']??'';$known=$_SESSION['csrf']??'';if(!$sent||!$known||!hash_equals($known,$sent))respond(['error'=>'La solicitud de seguridad no es válida.'],403);} function session_payload():array{return authenticated()?['authenticated'=>true,'email'=>$_SESSION['admin_email'],'csrf'=>$_SESSION['csrf']]:['authenticated'=>false];}

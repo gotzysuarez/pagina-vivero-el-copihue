@@ -1,4 +1,4 @@
-export type PlantCategory = "Interior" | "Exterior" | "Flores" | "Huerto";
+export type PlantCategory = string;
 export interface Plant { id:string; name:string; botanical:string; category:PlantCategory; price:number|null; image:string; light:string; water:string; season:string; difficulty:string; petNote:string; description:string; }
 export const CATEGORIES = ["Todas", "Interior", "Exterior", "Flores", "Huerto"] as const;
 export const PLANTS: Plant[] = [
