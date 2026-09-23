@@ -911,8 +911,8 @@ function CartDrawer({ settings }: { settings: SiteSettings }) {
 function Footer({ settings }: { settings: SiteSettings }) {
   return (
     <footer className="border-t border-white/10 bg-[#080a08] px-5 py-12 sm:px-8">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-        <div className="flex items-center gap-4">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex items-center gap-4 self-stretch sm:self-auto">
           <img
             src="/assets/logo-vivero-el-copihue.png"
             alt="Logo de Vivero El Copihue"
@@ -928,7 +928,7 @@ function Footer({ settings }: { settings: SiteSettings }) {
             </p>
           </div>
         </div>
-        <div className="text-sm text-white/45">
+        <div className="text-center text-sm text-white/45 lg:text-left">
           <a
             className="block text-white hover:underline"
             href={`tel:+${settings.phoneWhatsApp}`}
@@ -946,14 +946,14 @@ function Footer({ settings }: { settings: SiteSettings }) {
           <p className="mt-4 text-xs text-white/35">
             Página creada por kprile@oulook.es
           </p>
-          <a
-            className="mt-4 inline-flex rounded-full border border-[#d2b66e]/50 px-4 py-2 text-xs font-semibold text-[#d2b66e] transition hover:bg-[#d2b66e] hover:text-[#101510]"
-            href="/?admin"
-          >
-            Administrar sitio
-          </a>
         </div>
       </div>
+      <a
+        className="mx-auto mt-8 flex w-fit rounded-full border border-[#d2b66e]/50 px-4 py-2 text-xs font-semibold text-[#d2b66e] transition hover:bg-[#d2b66e] hover:text-[#101510]"
+        href="/?admin"
+      >
+        Administrar sitio
+      </a>
     </footer>
   );
 }
